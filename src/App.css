@@ -5,7 +5,7 @@
   --primary-red: #c73b0f;
 
   /* neutral colors */
- --rose-50: #fcf8f6;
+  --rose-50: #fcf8f6;
   --rose-100: #f5eeec;
   --rose-300: #caaafa;
   --rose-400: #ad8a85;
@@ -165,7 +165,6 @@ body {
 }
 
 /* Cart Sidebar Styling */
-
 .empty-cart-content {
   display: flex;
   flex-direction: column;
@@ -207,9 +206,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
-  border-bottom: 1px solid #f5eeec; /* Soft, subtle divider line */
+  border-bottom: 1px solid #f5eeec;
 }
-
 
 .cart-list .cart-item:last-child {
   border-bottom: none;
@@ -283,8 +281,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #fcf8f6; /* Soft neutral background */
-  border: 1px solid transparent; /* Or adjust border color if needed */
+  background-color: #fcf8f6;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 1rem;
   margin: 1.5rem 0;
@@ -319,71 +317,52 @@ body {
   background: #a22e0a;
 }
 
-/* Desktop layout (Side by side) */
-@media (min-width: 1024px) {
-  .main-layout {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2rem;
-  }
 
-  .product-section {
-    flex: 2.2;
-  }
+/* ========================================================== */
+/* ========== FULLY RESPONSIVE ORDER CONFIRMED MODAL ======== */
+/* ========================================================== */
 
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 columns side by side */
-  }
-
-  .cart-container {
-    flex: 1;
-    position: sticky;
-    top: 2rem;
-  }
-  
-  /* ========== Fully Responsive Order Confirmed Modal ========== */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* This creates the dark backdrop that covers everything */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark backdrop covering everything */
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers the modal on the screen */
-  z-index: 9999;       /* Forces it to sit on top of all other elements */
-  padding: 1rem;
+  align-items: flex-end; /* Mobile default: sits at bottom or center */
+  z-index: 99999;
+  padding: 0;
 }
 
-/* On desktop, center the modal */
 @media (min-width: 768px) {
   .modal-overlay {
-    align-items: center;
+    align-items: center; /* Centers modal on tablets and desktops */
+    padding: 1rem;
   }
-}
-
-.order-modal-content {
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 480px;
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 .modal-content {
   background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
   width: 100%;
   max-width: 520px;
-  max-height: 85vh; /* Prevents the modal from exceeding phone screen height */
-  overflow-y: auto;  /* Allows scrolling inside the modal if there are many items */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-height: 85vh;
+  overflow-y: auto;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    border-radius: 12px;
+    padding: 2rem;
+  }
 }
 
 .order-confirmed-icon {
@@ -419,11 +398,15 @@ body {
   gap: 0.5rem;
 }
 
+.modal-item:last-child {
+  border-bottom: none;
+}
+
 .modal-item-left {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-width: 0; /* Allows text truncation if names are long */
+  min-width: 0;
 }
 
 .modal-thumb {
@@ -446,7 +429,7 @@ body {
   margin-bottom: 0.2rem;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Gracefully truncates long dessert names on tiny screens */
+  text-overflow: ellipsis;
 }
 
 .modal-item-pricing {
@@ -490,26 +473,29 @@ body {
   margin: 0;
 }
 
-/* Larger screens (Tablets & Desktops >= 768px) */
-  .modal-content {
-    padding: 2rem;
+
+/* ========================================================== */
+/* ========== DESKTOP MAIN LAYOUT MEDIA QUERY =============== */
+/* ========================================================== */
+
+@media (min-width: 1024px) {
+  .main-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
   }
 
-  .modal-content h2 {
-    font-size: 1.75rem;
+  .product-section {
+    flex: 2.2;
   }
 
-  .modal-thumb {
-    width: 48px;
-    height: 48px;
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .modal-item-info .item-name {
-    font-size: 0.9rem;
-    white-space: normal;
-  }
-
-  .modal-total h2 {
-    font-size: 1.5rem;
+  .cart-container {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
   }
 }
