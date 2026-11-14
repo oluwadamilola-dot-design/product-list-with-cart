@@ -370,7 +370,7 @@ body {
 }
 
 .modal-content h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #260f0d;
   margin-bottom: 0.25rem;
@@ -474,9 +474,7 @@ body {
 }
 
 
-/* ========================================================== */
-/* ========== DESKTOP MAIN LAYOUT MEDIA QUERY =============== */
-/* ========================================================== */
+/* ========== DESKTOP MAIN LAYOUT =============== */
 
 @media (min-width: 1024px) {
   .main-layout {
