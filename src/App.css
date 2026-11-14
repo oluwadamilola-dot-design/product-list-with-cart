@@ -342,17 +342,18 @@ body {
   }
   
   /* ========== Fully Responsive Order Confirmed Modal ========== */
- .modal-overlay {
+.modal-overlay {
   position: fixed;
-  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* This creates the dark backdrop that covers everything */
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers nicely on mobile popup */
-  z-index: 99999;     /* Forces it above everything else */
-  padding: 1.5rem;    /* Prevents the modal from touching phone edges */
+  align-items: center; /* Centers the modal on the screen */
+  z-index: 9999;       /* Forces it to sit on top of all other elements */
+  padding: 1rem;
 }
 
 /* On desktop, center the modal */
@@ -362,24 +363,12 @@ body {
   }
 }
 
-.modal-content {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 520px;
-  max-height: 85vh; /* Prevents the modal from exceeding phone screen height */
-  overflow-y: auto;  /* Allows scrolling inside the modal if there are many items */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
-}
-
 .order-modal-content {
   background-color: #ffffff;
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   max-height: 90vh;
-  overflow-y: auto;   /* Allows scrolling inside the modal if the order is long */
+  overflow-y: auto;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
