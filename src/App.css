@@ -207,6 +207,8 @@ body {
   justify-content: space-between;
   padding: 1rem 0;
   border-bottom: 1px solid #f5eeec;
+  gap: 1rem;
+  width: 100%;
 }
 
 .cart-list .cart-item:last-child {
@@ -218,20 +220,26 @@ body {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  flex-grow: 1;
+  flex: 1;
+  min-width: 0; /* Prevents text overflow breaking the flex layout */
 }
 
 .cart-item-details h4 {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--rose-900);
-  margin-bottom: 0.35rem;
+  margin: 0 0 0.35rem 0;
+  text-align: left;
+  width: 100%;
 }
 
 .cart-item-pricing {
   font-size: 0.9rem;
   display: flex;
+  align-items: center;
   gap: 0.75rem;
+  text-align: left;
+  flex-wrap: wrap; /* Allows wrapping if screen gets too tight */
 }
 
 .item-qty {
