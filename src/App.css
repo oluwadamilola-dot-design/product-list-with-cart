@@ -344,17 +344,15 @@ body {
   /* ========== Fully Responsive Order Confirmed Modal ========== */
  .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark backdrop */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Slides up or sits at bottom on mobile */
-  z-index: 9999;       /* Ensures it sits above all other page content */
-  margin: 0;
-  padding: 0;
+  align-items: center; /* Centers nicely on mobile popup */
+  z-index: 99999;     /* Forces it above everything else */
+  padding: 1.5rem;    /* Prevents the modal from touching phone edges */
 }
 
 /* On desktop, center the modal */
@@ -374,6 +372,17 @@ body {
   overflow-y: auto;  /* Allows scrolling inside the modal if there are many items */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+}
+
+.order-modal-content {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;   /* Allows scrolling inside the modal if the order is long */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 .order-confirmed-icon {
