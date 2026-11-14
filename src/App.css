@@ -324,13 +324,15 @@ body {
   border-radius: 8px;
   padding: 1rem;
   margin: 1.5rem 0;
-  font-size: 0.875rem;
-  color: #260f0d;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .carbon-neutral-box p {
   margin: 0;
-  color: #87635a;
+  font-size: 0.85rem;
+  color: var(--rose-900, #260f0d);
+  white-space: nowrap;
 }
 
 .carbon-neutral-box strong {
