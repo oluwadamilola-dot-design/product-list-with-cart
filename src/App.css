@@ -348,22 +348,17 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* This creates the dark backdrop that covers everything */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers the modal on the screen */
-  z-index: 9999;       /* Forces it to sit on top of all other elements */
+  align-items: center; /* Centers the modal box on mobile and desktop */
+  z-index: 99999;     /* Ensures it sits on top of everything else */
   padding: 1rem;
 }
 
-/* On desktop, center the modal */
-@media (min-width: 768px) {
-  .modal-overlay {
-    align-items: center;
-  }
-}
-
-.order-modal-content {
+/* 2. Style the white confirmation card itself */
+.order-modal-content, 
+.modal-content { /* (depending on what class name you used inside your OrderModal component) */
   background-color: #ffffff;
   width: 100%;
   max-width: 480px;
@@ -372,6 +367,13 @@ body {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* On desktop, center the modal */
+@media (min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+  }
 }
 
 .order-confirmed-icon {
