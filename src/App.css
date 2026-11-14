@@ -115,12 +115,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 150px;
+  width: 100%;
+  max-width: 160px; 
   font-weight: 600;
 }
 
 .quantity-selector button {
-  background: none;
+  background: transparent;
   border: 1px solid white;
   color: white;
   width: 22px;
@@ -130,6 +131,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -349,10 +351,18 @@ body {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* On mobile, it often sits at the bottom or center */
   z-index: 1000;
   padding: 1rem; /* Adds safe breathing room on mobile screens */
   box-sizing: border-box;
+  padding: 0;
+}
+
+/* On desktop, center the modal */
+@media (min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+  }
 }
 
 .modal-content {
