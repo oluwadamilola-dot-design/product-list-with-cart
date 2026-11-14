@@ -8,7 +8,6 @@ export default function Cart({ cart, updateQuantity, removeFromCart, onConfirm }
       
       {cart.length === 0 ? (
         <div className="empty-cart-content">
-          {/* Empty cart illustration image */}
           <img 
             src="/images/illustration-empty-cart.svg" 
             alt="Empty cart" 
@@ -21,17 +20,26 @@ export default function Cart({ cart, updateQuantity, removeFromCart, onConfirm }
           <ul className="cart-list">
             {cart.map((item) => (
               <li key={item.name} className="cart-item">
+                {/* Left Side: Product Name and Pricing details */}
                 <div className="cart-item-details">
                   <h4>{item.name}</h4>
                   <div className="cart-item-pricing">
                     <span className="item-qty">{item.quantity}x</span>
                     <span className="item-price">@ ${item.price.toFixed(2)}</span>
-                    <span className="item-subtotal">${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 </div>
-                <button className="remove-item-btn" onClick={() => removeFromCart(item.name)} aria-label="Remove item">
-                  <img src="/images/icon-remove-item.svg" alt="Remove" width="10" height="10" />
-                </button>
+
+                {/* Right Side: Subtotal and Remove Button grouped together */}
+                <div className="cart-item-action">
+                  <span className="item-total-price">${(item.price * item.quantity).toFixed(2)}</span>
+                  <button 
+                    className="remove-item-btn" 
+                    onClick={() => removeFromCart(item.name)} 
+                    aria-label="Remove item"
+                  >
+                    <img src="/images/icon-remove-item.svg" alt="Remove" width="10" height="10" />
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

@@ -201,6 +201,7 @@ body {
   margin-bottom: 1.25rem;
 }
 
+/* Cart Item Row Styling */
 .cart-list .cart-item {
   display: flex !important;
   align-items: center !important;
@@ -221,7 +222,7 @@ body {
   align-items: flex-start !important;
   text-align: left !important;
   flex: 1 !important;
-  min-width: 0 !important; /* Prevents text overflow breaking the flex layout */
+  min-width: 0 !important;
 }
 
 .cart-item-details h4 {
@@ -239,39 +240,48 @@ body {
   align-items: center !important;
   gap: 0.75rem !important;
   text-align: left !important;
-  flex-wrap: wrap !important; /* Allows wrapping if screen gets too tight */
 }
 
 .item-qty {
-  color: var(--primary-red);
-  font-weight: 600;
+  color: var(--primary-red) !important;
+  font-weight: 600 !important;
 }
 
 .item-price {
-  color: var(--rose-500);
+  color: var(--rose-500) !important;
 }
 
-.item-subtotal {
-  color: var(--rose-500);
-  font-weight: 600;
+/* Right side action container (Subtotal + Remove Button) */
+.cart-item-action {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  flex-shrink: 0 !important;
+}
+
+.item-total-price {
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: var(--rose-500) !important;
 }
 
 .remove-item-btn {
-  background: none;
-  border: 1px solid var(--rose-400);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  transition: border-color 0.2s;
+  background: none !important;
+  border: 1px solid var(--rose-400) !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: border-color 0.2s !important;
 }
 
 .remove-item-btn:hover {
-  border-color: var(--rose-900);
+  border-color: var(--rose-900) !important;
 }
 
 .cart-total-row {
@@ -344,17 +354,17 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark backdrop covering everything */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Mobile default: sits at bottom or center */
+  align-items: flex-end;
   z-index: 99999;
   padding: 0;
 }
 
 @media (min-width: 768px) {
   .modal-overlay {
-    align-items: center; /* Centers modal on tablets and desktops */
+    align-items: center;
     padding: 1rem;
   }
 }
