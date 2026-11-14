@@ -20,7 +20,7 @@ export default function Cart({ cart, updateQuantity, removeFromCart, onConfirm }
           <ul className="cart-list">
             {cart.map((item) => (
               <li key={item.name} className="cart-item">
-                {/* Left Side: Product Name and Pricing details */}
+                {/* Left Side: Product Name, Quantity, and Unit Price */}
                 <div className="cart-item-details">
                   <h4>{item.name}</h4>
                   <div className="cart-item-pricing">
@@ -29,9 +29,11 @@ export default function Cart({ cart, updateQuantity, removeFromCart, onConfirm }
                   </div>
                 </div>
 
-                {/* Right Side: Subtotal and Remove Button grouped together */}
+                {/* Right Side: Subtotal and Remove Button */}
                 <div className="cart-item-action">
-                  <span className="item-total-price">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="item-total-price">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </span>
                   <button 
                     className="remove-item-btn" 
                     onClick={() => removeFromCart(item.name)} 
